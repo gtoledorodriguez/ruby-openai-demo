@@ -37,10 +37,19 @@ while input != "bye"
       }
     )
 
-    
+    choices = api_response.fetch("choices")
+    first_choice = choices.at(0)
+    message = first_choice.fetch("message")
+    assistant_response = message["content"]
+
+    puts assistant_response
+    puts "--------------------------------------------------"
+
+    message_list.push({
+      "role" => "assistant",
+      "content" => assistant_response
+    })
   end
 end
 
-
-
-pp api_response
+puts "Goodbye! Have a great day"
