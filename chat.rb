@@ -23,6 +23,14 @@ while input != "bye"
 
   input = gets.chomp
 
+  if input != "bye"
+    message_list.push({
+      "role" => "user",
+      "content" => input
+    })
+
+    
+  end
 end
 
 # Call the API to get the next message from GPT
