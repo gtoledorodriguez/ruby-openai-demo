@@ -11,13 +11,19 @@ client = OpenAI::Client.new(api_key: ENV.fetch("OPENAI_API_KEY"))
 message_list = [
   {
     "role" => "system",
-    "content" => "You are a helpful assistant who talks like Shakespeare."
-  },
-  {
-    "role" => "user",
-    "content" => "Hello! What are the best spots for pizza in Chicago?"
+    "content" => "You are a helpful assistant,"
   }
 ]
+
+input = ""
+
+while input != "bye"
+  puts "Hello! How can I help you today?"
+  puts "--------------------------------------------------"
+
+  input = gets.chomp
+
+end
 
 # Call the API to get the next message from GPT
 api_response = client.chat(
