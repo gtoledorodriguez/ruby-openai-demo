@@ -3,8 +3,6 @@ require "json"
 require "dotenv/load"
 require "openai"
 
-pp "howdy"
-
 client = OpenAI::Client.new(api_key: ENV.fetch("OPENAI_API_KEY"))
 
 # Prepare an Array of previous messages
